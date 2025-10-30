@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/30 12:47:27 by nseon            ###   ########.fr       */
+/*   Updated: 2025/10/30 15:17:40 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "Fixed.hpp"
 
-const int Fixed::_nb_bits = 8;
+const int Fixed::_dec_bits = 8;
 
 Fixed::Fixed() : _value(0)
 {
