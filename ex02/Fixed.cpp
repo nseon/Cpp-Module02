@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/30 18:39:27 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/04 11:05:34 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ int Fixed::toInt( void ) const
 float Fixed::toFloat( void ) const
 {
 	return (_value / pow(2, _dec_bits));
+}
+
+Fixed &Fixed::min(Fixed &f1, Fixed &f2)
+{
+	if (f1 < f2)
+		return (f1);
+	return (f2);
+}
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2)
+{
+	if (f1 < f2)
+		return (f2);
+	return (f1);
 }
 
 /* ===============OPERATORS=============== */
@@ -88,6 +102,18 @@ Fixed Fixed::operator*(const Fixed &other)
 Fixed Fixed::operator/(const Fixed &other)
 {
 	_value /= other._value;
+	return (*this);
+}
+
+Fixed Fixed::operator++()
+{
+	_value += (1 * pow(2, _dec_bits));
+	return (*this);
+}
+
+Fixed Fixed::operator--()
+{
+	_value -= (1 * pow(2, _dec_bits));
 	return (*this);
 }
 
