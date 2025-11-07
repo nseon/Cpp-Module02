@@ -6,9 +6,12 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:44 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/30 17:12:30 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/07 15:23:56 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 class Fixed {
 	private:
@@ -26,3 +29,5 @@ class Fixed {
 		float toFloat( void ) const;
 		int toInt( void ) const;
 };
+
+#endif

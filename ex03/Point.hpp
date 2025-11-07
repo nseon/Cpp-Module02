@@ -6,9 +6,12 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 10:54:26 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/07 11:07:03 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/07 15:24:32 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef POINT_HPP
+# define POINT_HPP
 
 #include "Fixed.hpp"
 
@@ -25,3 +28,7 @@ class Point {
 		Fixed getX() const;
 		Fixed getY() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif

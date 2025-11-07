@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/05 14:40:48 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/07 15:25:40 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ Fixed &Fixed::operator=(const Fixed &model)
 {
 	if (this != &model)
 		_value = model._value;
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Fixed copy assignment operator called" << std::endl;
 	return (*this);
 }
 
@@ -159,30 +159,30 @@ Fixed Fixed::operator--(int)
 
 Fixed::Fixed() : _value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &model) : _value(model._value)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Fixed copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int nb) : _value(nb << _dec_bits)
 {
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Fixed int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f)
 {
 	_value = static_cast<int>(f * powf(2, _dec_bits));
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "Fixed float constructor called" << std::endl;
 }
 
 /* ===============DESTRUCTOR=============== */
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Fixed destructor called" << std::endl;
 }
 
 /* ===============GET/SET=============== */

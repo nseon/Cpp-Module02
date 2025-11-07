@@ -6,13 +6,14 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:16 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/05 14:55:04 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/07 16:03:06 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int	main()
 {
@@ -36,5 +37,14 @@ int	main()
 	std::cout << "b is " << b.toInt() << std::endl;
 	std::cout << "c is " << c.toInt() << std::endl;
 	std::cout << "d is " << d.toInt() << std::endl;
+
+	Point p1(-25, -30);
+	Point p2(10, 5);
+	Point p3(-2, 8);
+	Point p4(-10, -15);
+	if (bsp(p2, p3, p4, p1))
+		std::cout << "Point is in the triangle" << std::endl;
+	else
+		std::cout << "Point isn't in the triangle" << std::endl;
 	return 0;
 }
