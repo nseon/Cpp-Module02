@@ -6,11 +6,11 @@
 #    By: nseon <nseon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 10:54:16 by nseon             #+#    #+#              #
-#    Updated: 2025/11/05 14:23:53 by nseon            ###   ########.fr        #
+#    Updated: 2025/11/07 11:07:31 by nseon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	fixed
+NAME 		=	bsp
 
 # ---------------FILES--------------- #
 
@@ -26,6 +26,8 @@ DEP			=	$(patsubst %.cpp, $(MAKE_DIR)%.d, $(SRC))
 
 SRC			=	main.cpp \
 				Fixed.cpp \
+				bsp.cpp \
+				Point.cpp \
 
 # --------------CONFIGS-------------- #
 
