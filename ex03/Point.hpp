@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 10:54:26 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/07 15:24:32 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/21 10:35:41 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ class Point {
 		Fixed getY() const;
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp( Point const &a, Point const &b, Point const &c, Point const &point);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/30 17:16:24 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/21 09:01:50 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,6 @@ Fixed::Fixed(const Fixed &model) : _value(model._value)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(const Fixed &model)
-{
-	if (this != &model)
-		_value = model._value;
-	std::cout << "Copy assignment operator called" << std::endl;
-	return (*this);
-}
-
 Fixed::Fixed(const int nb) : _value(nb << _dec_bits)
 {
 	std::cout << "Int constructor called" << std::endl;
@@ -64,6 +56,23 @@ Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
+
+/* ===============OPERATORS=============== */
+
+std::ostream &operator<<(std::ostream& os, const Fixed &model)
+{
+	os << model.toFloat();
+	return (os);
+}
+
+Fixed &Fixed::operator=(const Fixed &model)
+{
+	if (this != &model)
+		_value = model._value;
+	std::cout << "Copy assignment operator called" << std::endl;
+	return (*this);
+}
+
 
 /* ===============GET/SET=============== */
 

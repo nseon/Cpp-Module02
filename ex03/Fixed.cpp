@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/07 15:25:40 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/21 10:24:46 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ Fixed const &Fixed::max(Fixed const &f1, Fixed const &f2)
 }
 
 /* ===============OPERATORS=============== */
+
+std::ostream &operator<<(std::ostream& os, const Fixed &model)
+{
+	os << model.toFloat();
+	return (os);
+}
 
 Fixed &Fixed::operator=(const Fixed &model)
 {

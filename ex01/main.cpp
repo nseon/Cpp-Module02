@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:16 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/30 17:21:46 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/21 08:44:52 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,20 @@
 
 #include "Fixed.hpp"
 
-int	main()
+int main( void )
 {
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 	a = Fixed( 1234.4321f );
-
-	std::cout << "======================FLOAT======================" << std::endl;
-	
-	std::cout << "a is " << a.toFloat() << std::endl;
-	std::cout << "b is " << b.toFloat() << std::endl;
-	std::cout << "c is " << c.toFloat() << std::endl;
-	std::cout << "d is " << d.toFloat() << std::endl;
-
-	std::cout << "======================INT======================" << std::endl;
-
-	std::cout << "a is " << a.toInt() << std::endl;
-	std::cout << "b is " << b.toInt() << std::endl;
-	std::cout << "c is " << c.toInt() << std::endl;
-	std::cout << "d is " << d.toInt() << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }

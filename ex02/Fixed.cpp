@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 09:14:38 by nseon             #+#    #+#             */
-/*   Updated: 2025/11/05 14:40:48 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/21 09:30:02 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ Fixed const &Fixed::max(Fixed const &f1, Fixed const &f2)
 }
 
 /* ===============OPERATORS=============== */
+
+std::ostream &operator<<(std::ostream& os, const Fixed &model)
+{
+	os << model.toFloat();
+	return (os);
+}
 
 Fixed &Fixed::operator=(const Fixed &model)
 {
@@ -116,15 +122,17 @@ Fixed Fixed::operator*(const Fixed &other)
 	Fixed res = *this;
 
 	res._value *= other._value;
+	res._value /= static_cast<int>(pow(2, _dec_bits));
 	return (res);
 }
 
 Fixed Fixed::operator/(const Fixed &other)
 {
-	Fixed res = *this;
+	Fixed	old = *this;
 
-	res._value /= other._value;
-	return (res);
+	old._value = static_cast<int>(static_cast<float>(old._value) / static_cast<float>(other._value)
+					* powf(2, _dec_bits));
+	return (old);
 }
 
 Fixed &Fixed::operator++()
